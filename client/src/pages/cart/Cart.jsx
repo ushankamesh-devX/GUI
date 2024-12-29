@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 
 const Cart = () => {
-  // Sample cart items
+
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -20,26 +20,26 @@ const Cart = () => {
     },
   ]);
 
-  // Function to remove item from cart
+
   const removeItem = (id) => {
     setCartItems(cartItems.filter(item => item.id !== id));
   };
 
-  // Function to increase quantity
+
   const increaseQuantity = (id) => {
     setCartItems(cartItems.map(item => 
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
     ));
   };
 
-  // Function to decrease quantity
+
   const decreaseQuantity = (id) => {
     setCartItems(cartItems.map(item => 
       item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
     ));
   };
 
-  // Calculate total price
+
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
