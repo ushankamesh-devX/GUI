@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../../components/hero/Hero'
 import BestChoice from '../../components/bestChoice/BestChoice'
+import Contact from '../../components/contact/Contact'
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
 
         <Hero/>
         <BestChoice/>
+        {/* <Contact/> */}
       </section>
     </div>
   )

@@ -65,12 +65,12 @@ function Hero() {
             </div>
             <div className="w-80 grid grid-cols-2 mt-5 gap-4">
               <Link>
-                <button className="text-2xl rounded-md bg-myBlack text-myWhite py-2.5 w-full">
+                <button className="text-2xl rounded-md bg-myBlack text-myWhite py-2.5 w-full hover:underline hover:bg-myBlackLite">
                   Register
                 </button>
               </Link>
               <Link>
-                <button className="w-full text-2xl border-2 border-myBlack rounded-md  text-myBlack py-2">
+                <button className="w-full text-2xl border-2 border-myBlack rounded-md  text-myBlack py-2 hover:underline hover:bg-myGray hover:bg-opacity-35">
                   Login
                 </button>
               </Link>
