@@ -19,11 +19,11 @@ function ItemCard({ product }) {
         className="w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-in-out"
       />
 
-      <h1 className="font-semibold text-base text-myBlackLite mt-4">
+      <h1 className="font-semibold text-base text-myBlackLite mt-4 line-clamp-2">
         {product.title}
       </h1>
 
-      <div className="flex flex-row items-baseline space-x-2">
+      <div className="flex flex-row items-baseline space-x-2 ">
         <h2>
           <StarRating rating={product.rating} size="1.4em" />
         </h2>

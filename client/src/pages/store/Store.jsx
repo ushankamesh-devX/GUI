@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import ItemCard from "../../components/itemCard/ItemCard";
 const Store = () => {
   const { storeCategory } = useParams();
