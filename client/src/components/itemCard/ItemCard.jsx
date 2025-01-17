@@ -5,7 +5,7 @@ import { FaCartPlus } from "react-icons/fa6";
 
 function ItemCard({ product }) {
   return (
-    <section className="group relative   w-[280px]">
+    <section className="group relative   w-[280px] h-[500px]">
       <div className="p-4 relative hover:absolute hover:shadow-lg hover:z-20 rounded-2xl transition-all duration-500 ease-in-out">
         <div title="Add to cart" className="hidden group-hover:block absolute z-30 right-5 top-5 ">
         <div className="size-9 bg-myOrange rounded-full flex flex-col items-center justify-center hover:scale-110 transition-all duration-500 ease-in-out">
@@ -16,7 +16,7 @@ function ItemCard({ product }) {
       <img
         src={product.image}
         alt=""
-        className="w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-in-out"
+        className=" w-[280px] h-[280px] object-contain rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-in-out"
       />
 
       <h1 className="font-semibold text-base text-myBlackLite mt-4 line-clamp-2">
@@ -31,7 +31,7 @@ function ItemCard({ product }) {
       </div>
 
       <div className="flex flex-row items-baseline space-x-2">
-        <h3 className="text-2xl font-extrabold text-myRed">{product.price}</h3>
+        <h3 className="text-2xl font-extrabold text-myRed">LKR {product.price}</h3>
         <h4 className="text-base font-bold text-myBlack opacity-50 line-through">
           {product.oldPrice}
         </h4>

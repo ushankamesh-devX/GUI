@@ -66,6 +66,18 @@ db.connect((err) => {
     }
 });
 
+// Fetch All Products
+app.get('/products', (req, res) => {
+    const sql = 'SELECT * FROM products';
+    db.query(sql, (err, results) => {
+        if (err) {
+            res.status(500).send('Error fetching products');
+        } else {
+            res.json(results);
+        }
+    });
+})
+
 // Fetch Best Choice Products Based on Rating * Sold, Limit 15 (for / and /products/best-choice)
 app.get(['/','/products/best-choice'], (req, res) => {
     const sql = 'SELECT * FROM products ORDER BY (rating * sold) DESC LIMIT 15';
@@ -78,10 +90,37 @@ app.get(['/','/products/best-choice'], (req, res) => {
     });
 });
 
-// Fetch All Products
+// Fetch Products by Category
+app.get('/store/:category', (req, res) => {
+    const category = req.params.category.toLowerCase(); // Get category from URL
+    const validCategories = ['electronics', 'food', 'clothing', 'kids']; // Define valid categories
+
+    if (!validCategories.includes(category)) {
+        return res.status(400).json({ error: 'Invalid category' });
+    }
+
+    const sql = 'SELECT * FROM products WHERE category = ?';
+    db.query(sql, [category], (err, results) => {
+        if (err) {
+            res.status(500).send('Error fetching products by category');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+// Fetch Products (with optional category filter)
 app.get('/products', (req, res) => {
-    const sql = 'SELECT * FROM products';
-    db.query(sql, (err, results) => {
+    const category = req.query.category; // Get category from query parameters
+    let sql = 'SELECT * FROM products';
+    const values = [];
+
+    if (category) {
+        sql += ' WHERE LOWER(category) = ?';
+        values.push(category.toLowerCase());
+    }
+
+    db.query(sql, values, (err, results) => {
         if (err) {
             res.status(500).send('Error fetching products');
         } else {
@@ -89,11 +128,26 @@ app.get('/products', (req, res) => {
         }
     });
 });
+// Fetch Product by ID
+app.get('/admin/products/:id', (req, res) => {
+    const { id } = req.params;
+    const sql = 'SELECT * FROM products WHERE id = ?';
+    db.query(sql, [id], (err, results) => {
+        if (err) {
+            res.status(500).send('Error fetching product');
+        } else if (results.length === 0) {
+            res.status(404).send('Product not found');
+        } else {
+            res.json(results[0]); // Send the first matching product
+        }
+    });
+});
+
 
 // Add a New Product
-app.post('/products', (req, res) => {
+app.post('/admin/products', (req, res) => {
     const { image, title, price, oldPrice, rating, sold, category } = req.body;
-    const sql = `INSERT INTO products (image, title, price, oldPrice, rating, sold, category) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const sql = 'INSERT INTO products (image, title, price, oldPrice, rating, sold, category) VALUES (?, ?, ?, ?, ?, ?, ?)';
     db.query(sql, [image, title, price, oldPrice, rating, sold, category], (err, result) => {
         if (err) {
             res.status(500).send('Error adding product');
@@ -102,6 +156,34 @@ app.post('/products', (req, res) => {
         }
     });
 });
+
+// Update Product
+app.put('/admin/products/:id', (req, res) => {
+    const { id } = req.params;
+    const { image, title, price, oldPrice, rating, sold, category } = req.body;
+    const sql = 'UPDATE products SET image = ?, title = ?, price = ?, oldPrice = ?, rating = ?, sold = ?, category = ? WHERE id = ?';
+    db.query(sql, [image, title, price, oldPrice, rating, sold, category, id], (err, result) => {
+        if (err) {
+            res.status(500).send('Error updating product');
+        } else {
+            res.send('Product updated successfully');
+        }
+    });
+});
+
+// Delete Product
+app.delete('/admin/products/:id', (req, res) => {
+    const { id } = req.params;
+    const sql = 'DELETE FROM products WHERE id = ?';
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            res.status(500).send('Error deleting product');
+        } else {
+            res.send('Product deleted successfully');
+        }
+    });
+});
+
 
 // Start the Server
 const PORT = process.env.PORT || 5000;

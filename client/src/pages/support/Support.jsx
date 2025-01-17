@@ -4,19 +4,10 @@ const Support = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 text-white p-4">
-        <div className="container mx-auto flex justify-between items-center">
+
+        <div className="container mx-auto text-center mt-8 mb-8">
           <h1 className="text-2xl font-bold">Support</h1>
-          <nav>
-            <ul className="flex space-x-4">
-              <li><a href="/" className="hover:underline">Home</a></li>
-              <li><a href="/about" className="hover:underline">About</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
-              <li><a href="/support" className="hover:underline">Support</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+  </div>
 
       {/* Support Form */}
       <main className="flex-grow container mx-auto p-6">
@@ -38,12 +29,12 @@ const Support = () => {
             <label className="block text-gray-700" htmlFor="message">Message</label>
             <textarea id="message" className="mt-1 block w-full p-2 border border-gray-300 rounded" rows="4" required></textarea>
           </div>
-          <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+          <button type="submit" className="bg-myBlack text-white px-4 py-2 rounded ">Submit</button>
         </form>
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white p-4">
+      <footer className="bg-myBlack text-white p-4">
         <div className="container mx-auto text-center">
           <p>Contact us: support@example.com</p>
           <div className="flex justify-center space-x-4 mt-2">
