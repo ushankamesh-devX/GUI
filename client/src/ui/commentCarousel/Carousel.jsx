@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./carousel.css"; // Import the new CSS file
 
 const Carousel = ({
   slides,
@@ -9,7 +10,7 @@ const Carousel = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!autoPlay) return;
     const timer = setInterval(() => {
       nextSlide();
@@ -26,62 +27,58 @@ const Carousel = ({
   };
 
   return (
-    <div className=" relative w-full max-w-lg mx-auto overflow-hidden">
+    <div className="carousel-container">
       <div
-        className="flex transition-transform duration-500"
+        className="carousel-track"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full mb-2 flex flex-col items-start justify-start bg-myWhite p-6 rounded-lg shadow-md border text-center"
+            className="carousel-slide"
           >
-            <div className="flex flex-row space-x-1">
+            <div className="carousel-slide-header">
               <img
                 src={slide.avatar}
                 alt={slide.name}
-                className="size-12 rounded-full  border"
+                className="carousel-avatar"
               />
-
-              <div className="flex flex-col items-start">
-                <p className="text-sm text-gray-500">{slide.role}</p>
-                <h2 className="text-myBlackLite text-lg font-bold">{slide.name}</h2>
-
+              <div className="carousel-slide-info">
+                <p className="carousel-role">{slide.role}</p>
+                <h2 className="carousel-name">{slide.name}</h2>
               </div>
             </div>
 
-            <p className="text-justify text-gray-600 text-sm">{slide.comment}</p>
+            <p className="carousel-comment">{slide.comment}</p>
           </div>
         ))}
       </div>
-
 
       {showArrows && (
         <>
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+            className="carousel-arrow carousel-arrow-left"
           >
             &#10094;
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+            className="carousel-arrow carousel-arrow-right"
           >
             &#10095;
           </button>
         </>
       )}
 
-
       {showIndicators && (
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        <div className="carousel-indicators">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full ${
-                currentIndex === index ? "bg-gray-400 w-4" : "bg-gray-400"
+              className={`carousel-indicator ${
+                currentIndex === index ? "carousel-indicator-active" : ""
               }`}
             ></button>
           ))}

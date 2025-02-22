@@ -10,10 +10,19 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    background-color: #FFD700;
+    background-color: var(--yellow);
+    color: var(--white);
+    font-weight: normal;
+    gap: 10px;
+    
+}
+
+.contact-link:hover {
+    text-decoration: underline;
 }
 
 .contact-icons {
+
     display: flex;
     gap: 10px;
 }
@@ -23,45 +32,197 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--dark);
+    color: var(--white);
+}
+.brand-logo {
+
+    font-size: 30px;
+}
+.brand-highlight{
+    font-weight: 600;
+    color: var(--yellow);
 }
 
 .search-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 50%;
+    background-color: var(--white);
+    border-radius: 999px;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 0.5rem;
-    border-radius: 25px 0 0 25px;
+    height: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 999px 0 0 999px;
     border: none;
+    outline: transparent;
+    color: var(--dark);
 }
 
 .search-bar button {
-    padding: 0.5rem 1rem;
-    border-radius: 0 25px 25px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 2px;
+    border-radius: 999px;
+    margin: 2px;
+    height: 40px;
     border: none;
-    background: black;
     color: white;
+    background-color: var(--dark);
+    padding-top: 0.25rem ;
+    padding-bottom: 0.25rem ;
+    padding-left: 1.5rem;
+    padding-right: 1rem ;
+    
 }
 
+.search-i {
+    margin-left: 0.5rem ;
+    margin-right: 0.5rem ;
+    font-weight: 400;
+    font-size: 18px;
+}
 .auth {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    
 }
 
-.dropdown {
+.welcome-text {
+    font-size: 0.75rem ;
+    line-height: 1rem ;
+}
+
+.auth-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.auth-icon {
+    font-size: 1.875rem ;
+    line-height: 2.25rem ;
+    margin-right: 0.25rem ;
+}
+
+.dropdown-icon{
+    font-size: 1.5rem ;
+    line-height: 2rem ;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
     position: absolute;
-    right: 2rem;
-    top: 4rem;
+    right: 9rem;
+    top: 96px ;
+    margin-top: 0.5rem ;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem ;
+    width: 16rem ;
+    border-radius: 1.5rem ;
     background: white;
     color: black;
-    padding: 1rem;
-    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown-header p {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.dropdown-header img {
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+.dropdown-welcome {
+    font-size: 0.75rem ;
+    line-height: 1rem;
+    color: var(--gray);
+    margin-top: 8px;
+}
+
+.dropdown-links {
+    margin-top: 8px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark-lite);
+}
+
+.dropdown-links li {
+    margin-top: 8px;
+}
+.dropdown-links li:hover {
+    text-decoration: underline;
+}
+.dropdown-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    font-weight: 600;
+}
+
+.register-button {
+    color: var(--white);
+    background-color: var(--dark);
+    border-radius: 999px;
+    width: 100%;
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+    padding-top: 4px ;
+    padding-bottom: 8px ;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    
+}
+.login-button {
+
+    color: var(--dark);
+    border: var(--dark) 2px solid;
+    border-radius: 999px;
+    width: 100%;
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+    padding-top: 6px ;
+    padding-bottom: 6px ;
+    text-align: center;
+    display: block;
+
+
+}
+
+.register-button:hover {
+    background-color: var(--dark-lite);
+    text-decoration: underline;
+}
+.login-button:hover {
+    background-color: var(--white-hover);
+    text-decoration: underline;
+    
 }
 
 .categories-btn {
@@ -82,4 +243,96 @@
 .nav-links li {
     display: inline;
     margin: 0 1rem;
+}
+
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.cart-icon {
+    font-size: 1.5rem ;
+    line-height: 2rem ;
+}
+
+.cart-count {
+    transform:translateY(-16px) ;
+    transform:translateX(-8px) ;
+    background-color: var(--white);
+    color: var(--dark);
+
+    height: 16px;
+    width: 24px;
+    margin-bottom: 24px;
+    font-size: 0.75rem ;
+    line-height: 1rem ;
+    font-weight: 700;
+    border-radius: 999px;
+    text-align: center;
+    border: var(--dark) 1px solid;
+
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark);
+    color: var(--white);
+    border-top: var(--gray) 2px solid;
+    padding: 8px 32px;
+
+}
+
+.category-button {
+    display: flex;
+    flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     gap: 8px;
+     background-color: var(--dark-lite);
+     border-radius: 999px;
+     padding: 4px 16px;
+     color: var(--gray);
+
+}
+
+.category-menu {
+    
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: center;
+    position: absolute;
+    z-index: 50;
+    left: 20px;
+    top: 156px;
+    margin-top: 8px;
+    width: 256px;
+    color: var(--dark);
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.category-menu li {
+    width: 256px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin: 4px 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.category-menu li:hover {
+    text-decoration: underline;
+    background-color: var(--white-hover);
 }

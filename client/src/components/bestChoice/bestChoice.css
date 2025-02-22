@@ -1,0 +1,45 @@
+.best-choice-section {
+    margin-top: 14rem; 
+    margin-bottom: 4rem;  
+    text-align: center;
+  }
+  
+  .best-choice-title {
+    /* border: solid 2px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #1a1a1a; 
+    padding-bottom: 20px; 
+  }
+  
+  .best-choice-container {
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .best-choice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 640px) { 
+    .best-choice-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .best-choice-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .best-choice-card {
+    border-radius: 0.5rem; 
+    padding: 1rem; 
+  }
+  

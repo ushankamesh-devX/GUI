@@ -1,4 +1,5 @@
 import React from 'react'
+import "./home.css";
 import Hero from '../../components/hero/Hero'
 import BestChoice from '../../components/bestChoice/BestChoice'
 import Contact from '../../components/contact/Contact'
@@ -9,8 +10,9 @@ function Home() {
       <section className='max-w-screen-xl'>
 
         <Hero/>
+
         <BestChoice/>
-        {/* <Contact/> */}
+        <Contact/>
       </section>
     </div>
   )

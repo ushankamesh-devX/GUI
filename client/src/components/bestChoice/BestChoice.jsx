@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./bestChoice.css";
 import ItemCard from "../itemCard/ItemCard";
 
 function BestChoice() {
@@ -18,18 +19,19 @@ function BestChoice() {
   }, []);
 
   return (
-    <div>
-      <h1 className="text-2xl font-semibold text-myBlack mb-16 mt-36">Best Choice</h1>
-      <div className="mx-auto p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <div key={product.id} className="rounded-lg p-4">
-              <ItemCard product={product} />
-            </div>
-          ))}
-        </div>
+    <div className="best-choice-section">
+    <h1 className="best-choice-title">Best Choice</h1>
+    <div className="best-choice-container">
+      <div className="best-choice-grid">
+        {products.map((product) => (
+          <div key={product.id} className="best-choice-card">
+            <ItemCard product={product} />
+          </div>
+        ))}
       </div>
     </div>
+  </div>
+  
   );
 }
 

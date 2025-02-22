@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./hero.css";
 import Carousel from "../../ui/commentCarousel/Carousel";
 import imgHero from "../../assets/heroImage.png";
 import heroFooter from "../../assets/heroFooter.png";
@@ -44,57 +45,59 @@ function Hero() {
   ];
 
   return (
-    <div className="h-screen">
-      <div className="w-full h-4"></div>
-      <section className="grid grid-cols-3 gap-8">
-        <div className="col-span-1 flex flex-col justify-between">
-          <h1 className="text-3xl font-bold text-myBlack">
-            Discover Endless <br /> Choices, All in One Place!
-          </h1>
-          <div className=" p-8 shadow-md rounded-lg flex flex-col">
-            <div className="flex flex-row items-center space-x-3">
-              <img
-                src="https://placehold.co/40"
-                alt=""
-                className=" size-20 rounded-full "
-              />
-              <div className="flex flex-col">
-                <h3 className=" text-sm italic">Welcome,</h3>
-                <h2 className="text-2xl font-semibold">Register/Login</h2>
-              </div>
-            </div>
-            <div className="w-80 grid grid-cols-2 mt-5 gap-4">
-              <Link>
-                <button className="text-2xl rounded-md bg-myBlack text-myWhite py-2.5 w-full hover:underline hover:bg-myBlackLite">
-                  Register
-                </button>
-              </Link>
-              <Link>
-                <button className="w-full text-2xl border-2 border-myBlack rounded-md  text-myBlack py-2 hover:underline hover:bg-myGray hover:bg-opacity-35">
-                  Login
-                </button>
-              </Link>
+    <div className="hero-section">
+    <div className="hero-top-space"></div>
+    <section className="hero-grid">
+      <div className="hero-left-column">
+        <h1 className="hero-heading">
+          Discover Endless <br /> Choices, All in One Place!
+        </h1>
+        <div className="auth-card">
+          <div className="auth-header">
+            <img
+              src="https://placehold.co/40"
+              alt=""
+              className="auth-avatar"
+            />
+            <div className="auth-text">
+              <h3 className="auth-welcome">Welcome,</h3>
+              <h2 className="auth-title">Register/Login</h2>
             </div>
           </div>
-          <h3 className="text-2xl font-semibold text-myBlackLite text-center">General Positive Feedback</h3>
-        <div className=" my- flex items-center justify-center">
-        <Carousel
-          slides={slides}
-          autoPlay={true}
-          interval={2000}
-          showArrows={false}
-          showIndicators={true}
-        />
+          <div className="auth-buttons">
+            <Link>
+              <button className="register-button">
+                Register
+              </button>
+            </Link>
+            <Link>
+              <button className="login-button">
+                Login
+              </button>
+            </Link>
+          </div>
+        </div>
+        <h3 className="feedback-title">General Positive Feedback</h3>
+        <div className="carousel-wrapper">
+          <Carousel
+            slides={slides}
+            autoPlay={true}
+            interval={2000}
+            showArrows={false}
+            showIndicators={true}
+          />
+        </div>
       </div>
-        </div>
-        <div className="col-span-2">
-          <img src={imgHero} alt="" className="w-full"/>
-        </div>
-      </section>
-      <section className="py-16">
-        <img src={heroFooter} alt="" />
-      </section>
-    </div>
+      <div className="hero-right-column">
+        <img src={imgHero} alt="" className="hero-image"/>
+      </div>
+    </section>
+    <section className="hero-footer">
+      <img src={heroFooter} alt="" />
+    </section>
+
+    <hr />
+  </div>
   );
 }
 

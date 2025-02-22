@@ -1,0 +1,138 @@
+.item-card {
+    width: 280px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .item-card-content {
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+  }
+  
+  .item-card:hover .item-card-content {
+    position: absolute;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    z-index: 20;
+  }
+  
+  .item-card-cart-icon {
+    display: none;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    z-index: 30;
+  }
+  
+  .item-card:hover .item-card-cart-icon {
+    display: block;
+  }
+  
+  .cart-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: var(--orange); /* bg-myOrange */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .cart-icon {
+    font-size: 1.25rem;
+    color: var(--white);
+    text-align: center;
+  }
+  
+  .cart-icon-wrapper:hover {
+    transform: scale(1.1);
+  }
+  
+  .item-card-image {
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 1rem;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .item-card:hover .item-card-image {
+    transform: scale(1.05);
+  }
+
+  .item-details {
+    height: 128px;
+  }
+  
+  .item-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-lite); 
+    margin-top: 1rem;
+    line-clamp: 2;
+    /* height: 48px; */
+  }
+
+  .item-card-title {
+    text-align: start;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.item-card-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+  
+  .item-card-rating {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  
+  .item-card-sold {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .item-card-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  
+  .item-card-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff3333; /* text-myRed */
+  }
+  
+  .item-card-old-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+  }
+  
+  .item-card-buy-button {
+    display: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #ff9900; /* bg-myOrange */
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .item-card:hover .item-card-buy-button {
+    display: block;
+  }
+  

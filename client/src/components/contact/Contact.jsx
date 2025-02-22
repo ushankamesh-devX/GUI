@@ -1,82 +1,101 @@
 import React from "react";
 import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
 import imgContact from "../../assets/contact-image.png";
+import "./contact.css"; // Import the new CSS file
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 py-12">
-      <div className="flex flex-row space-x-7">
-        {/* Left Side: Image */}
-        <div className="abs">
-          <img
-            src={imgContact}
-            alt="Contact Us"
-            className=" absolute w-full h-auto rounded-lg shadow-lg"
-          />
-        </div>
+    <section className="contact-section">
+      <div className="contact-image-container">
+        <img
+          src={imgContact}
+          alt="Contact Us"
+          className="contact-image"
+        />
+      </div>
 
-        {/* Right Side: Contact Info */}
-        <div className="w-full md:w-1/2 space-y-8">
-          <h2 className="text-3xl font-extrabold text-gray-800">
-            Get in Touch with Us
-          </h2>
-          <p className="text-gray-600">
-            We’re here to assist you. Reach out to us via any of the following
-            methods.
-          </p>
-
-          <div className="grid grid-cols-1 gap-6">
-            {/* Email */}
-            <div className="flex items-center p-4 bg-white shadow-lg rounded-xl hover:shadow-2xl transition duration-300">
-              <HiMail className="text-4xl text-blue-500 mr-4" />
-              <div>
-                <h3 className="text-lg font-semibold text-gray-700">Email</h3>
-                <p className="text-gray-600">
-                  <a
-                    href="mailto:support@yourstore.com"
-                    className="text-blue-500 underline"
+      <div className="contact-container">
+        <div className="contact-card">
+          <div className="contact-grid">
+            <div className="contact-info">
+              <h2 className="contact-heading">Get in Touch</h2>
+              <p className="contact-description">
+                We'd love to hear from you! Whether you have a question about
+                our products, pricing, or anything else, our team is ready to
+                answer all your questions.
+              </p>
+              <div className="contact-details">
+                <p className="contact-detail">
+                  <HiMail className="contact-icon" />
+                  support@buynest.com
+                </p>
+                <p className="contact-detail">
+                  <HiPhone className="contact-icon" />
+                  (800) 123-4567
+                </p>
+                <p className="contact-detail">
+                  <HiLocationMarker className="contact-icon" />
+                  789 Market St, Shopville, USA
+                </p>
+              </div>
+              <div className="contact-social-icons">
+                <a className="contact-social-link" href="#">
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a className="contact-social-link" href="#">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a className="contact-social-link" href="#">
+                  <i className="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div className="contact-form-container">
+              <h2 className="contact-heading">Send Us a Message</h2>
+              <form className="contact-form">
+                <div className="contact-form-group">
+                  <label className="contact-label" htmlFor="name">
+                    Name
+                  </label>
+                  <input
+                    className="contact-input"
+                    id="name"
+                    placeholder="Your Name"
+                    type="text"
+                  />
+                </div>
+                <div className="contact-form-group">
+                  <label className="contact-label" htmlFor="email">
+                    Email
+                  </label>
+                  <input
+                    className="contact-input"
+                    id="email"
+                    placeholder="Your Email"
+                    type="email"
+                  />
+                </div>
+                <div className="contact-form-group">
+                  <label className="contact-label" htmlFor="message">
+                    Message
+                  </label>
+                  <textarea
+                    className="contact-textarea"
+                    id="message"
+                    placeholder="Your Message"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div className="contact-form-action">
+                  <button
+                    className="contact-submit-button"
+                    type="button"
                   >
-                    support@yourstore.com
-                  </a>
-                </p>
-              </div>
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </div>
-
-            {/* Phone */}
-            <div className="flex items-center p-4 bg-white shadow-lg rounded-xl hover:shadow-2xl transition duration-300">
-              <HiPhone className="text-4xl text-green-500 mr-4" />
-              <div>
-                <h3 className="text-lg font-semibold text-gray-700">Phone</h3>
-                <p className="text-gray-600">
-                  <a href="tel:+94761234567" className="text-green-500 underline">
-                    +94 76 123 4567
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="flex items-center p-4 bg-white shadow-lg rounded-xl hover:shadow-2xl transition duration-300">
-              <HiLocationMarker className="text-4xl text-red-500 mr-4" />
-              <div>
-                <h3 className="text-lg font-semibold text-gray-700">Visit Us</h3>
-                <p className="text-gray-600">
-                  123 Commerce Street,
-                  <br />
-                  Colombo 00100, Sri Lanka
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Business Hours */}
-          <div className="mt-6">
-            <h3 className="text-xl font-bold text-gray-800">Business Hours</h3>
-            <p className="text-gray-600 mt-2">
-              Monday to Friday: 9 AM – 6 PM
-              <br />
-              Saturday: 10 AM – 4 PM
-            </p>
           </div>
         </div>
       </div>

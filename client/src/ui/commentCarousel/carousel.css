@@ -1,0 +1,115 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    background-color: #ffffff; /* bg-myWhite */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #e6e6e6;
+  }
+  
+  .carousel-slide-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    margin-bottom: rem;
+  }
+  
+  .carousel-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #e6e6e6;
+  }
+  
+  .carousel-slide-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .carousel-role {
+    font-size: 0.875rem;
+    color: #737373;
+  }
+  
+  .carousel-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #595959; /* text-myBlackLite */
+  }
+  
+  .carousel-comment {
+    text-align: justify;
+    font-size: 0.875rem;
+    color: #4d4d4d;
+    padding-bottom: 1rem;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(55, 65, 81, 0.5);
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  
+  .carousel-arrow-left {
+    left: 1rem;
+  }
+  
+  .carousel-arrow-right {
+    right: 1rem;
+  }
+  
+  .carousel-arrow:hover {
+    background-color: rgba(55, 65, 81, 0.7);
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background-color: #bfbfbf;
+    cursor: pointer;
+    transition: width 0.3s ease;
+  }
+  
+  .carousel-indicator-active {
+    width: 16px;
+    background-color: #737373;
+  }
+  
