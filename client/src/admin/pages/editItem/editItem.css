@@ -1,0 +1,89 @@
+    .edititem-container {
+    padding: 24px;
+    background-color: var(--gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .edititem-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  
+  .edititem-form {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  
+  .edititem-field {
+    margin-bottom: 16px;
+  }
+  
+  .edititem-label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  
+  .edititem-input,
+  .edititem-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .edititem-input:focus,
+  .edititem-select:focus {
+    border: 2px solid var(--gray);
+  }
+  
+  .edititem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .edititem-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .edititem-button {
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+  }
+  
+  .edititem-submit {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+  
+  .edititem-submit:hover {
+    background-color: var(--red);
+  }
+  
+  .edititem-cancel {
+    background-color: var(--dark-lite);
+    color: var(--white);
+  }
+  
+  .edititem-cancel:hover {
+    background-color: var(--dark);
+  }
+  

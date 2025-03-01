@@ -1,7 +1,7 @@
 import React from "react";
 import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
 import imgContact from "../../assets/contact-image.png";
-import "./contact.css"; // Import the new CSS file
+import "./contact.css";
 
 const Contact = () => {
   return (

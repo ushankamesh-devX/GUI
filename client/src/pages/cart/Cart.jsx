@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./cart.css";
 import { FaTrash } from 'react-icons/fa';
 
 const Cart = () => {
@@ -43,51 +44,52 @@ const Cart = () => {
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
-      {cartItems.length === 0 ? (
-        <p className="text-lg">Your cart is empty.</p>
-      ) : (
-        <div className="bg-white shadow-md rounded-lg p-6">
-          {cartItems.map(item => (
-            <div key={item.id} className="flex items-center justify-between border-b py-4">
-              <div className="flex items-center">
-                <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded-md mr-4" />
-                <div>
-                  <h2 className="text-lg font-semibold">{item.title}</h2>
-                  <p className="text-gray-600">Price: LKR {item.price.toFixed(2)}</p>
-                  <div className="flex items-center">
-                    <button 
-                      onClick={() => decreaseQuantity(item.id)} 
-                      className="bg-myOrange text-myWhite px-2 rounded-l-md"
-                    >
-                      -
-                    </button>
-                    <span className="px-4">{item.quantity}</span>
-                    <button 
-                      onClick={() => increaseQuantity(item.id)} 
-                      className="bg-myOrange text-myWhite px-2 rounded-r-md"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
+    <div className="shopping-cart">
+  <h1 className="cart-title">Shopping Cart</h1>
+  {cartItems.length === 0 ? (
+    <p className="cart-empty-message">Your cart is empty.</p>
+  ) : (
+    <div className="cart-container">
+      {cartItems.map(item => (
+        <div key={item.id} className="cart-item">
+          <div className="cart-item-info">
+            <img src={item.image} alt={item.title} className="cart-item-image" />
+            <div>
+              <h2 className="cart-item-title">{item.title}</h2>
+              <p className="cart-item-price">Price: LKR {item.price.toFixed(2)}</p>
+              <div className="cart-item-quantity">
+                <button 
+                  onClick={() => decreaseQuantity(item.id)} 
+                  className="quantity-button quantity-decrease"
+                >
+                  -
+                </button>
+                <span className="quantity-value">{item.quantity}</span>
+                <button 
+                  onClick={() => increaseQuantity(item.id)} 
+                  className="quantity-button quantity-increase"
+                >
+                  +
+                </button>
               </div>
-              <button onClick={() => removeItem(item.id)} className="text-red-500 hover:text-red-700">
-                <FaTrash />
-              </button>
             </div>
-          ))}
-          <div className="flex justify-between mt-4">
-            <h2 className="text-xl font-bold">Total Price:</h2>
-            <p className="text-xl font-bold">LKR {totalPrice.toFixed(2)}</p>
           </div>
-          <button className="mt-4 w-full bg-myBlack text-myWhite py-2 rounded-md hover:bg-myBlackLite transition duration-200">
-            Proceed to Checkout
+          <button onClick={() => removeItem(item.id)} className="cart-item-remove">
+            <FaTrash />
           </button>
         </div>
-      )}
+      ))}
+      <div className="cart-total">
+        <h2 className="cart-total-title">Total Price:</h2>
+        <p className="cart-total-price">LKR {totalPrice.toFixed(2)}</p>
+      </div>
+      <button className="cart-checkout-button">
+        Proceed to Checkout
+      </button>
     </div>
+  )}
+</div>
+
   );
 };
 

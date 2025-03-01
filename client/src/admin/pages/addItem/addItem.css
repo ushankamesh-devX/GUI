@@ -1,0 +1,95 @@
+  
+  .additem-container {
+    padding: 24px;
+    background-color: var(--gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .additem-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  
+  .additem-form {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  
+  .additem-field {
+    margin-bottom: 16px;
+  }
+  
+  .additem-label {
+    display: block;
+    color: var(--dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .additem-input,
+  .additem-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--gray-dark);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .additem-input:focus,
+  .additem-select:focus {
+    border-color: var(--gray);
+
+  }
+  
+  .additem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .additem-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  .additem-submit-button {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .additem-submit-button:hover {
+    background-color: var(--red);
+  }
+  
+  .additem-cancel-button {
+    background-color: var(--dark-lite);
+    color: var(--white);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .additem-cancel-button:hover {
+    background-color: var(--dark);
+  }
+  

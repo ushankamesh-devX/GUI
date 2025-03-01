@@ -185,23 +185,24 @@
     font-weight: 600;
 }
 
-.register-button {
+.a-register-button {
     color: var(--white);
     background-color: var(--dark);
     border-radius: 999px;
     width: 100%;
     padding-left: 1rem ;
     padding-right: 1rem ;
-    padding-top: 4px ;
+    padding-top: 6px ;
     padding-bottom: 8px ;
     text-align: center;
     display: block;
-    font-size: 16px;
+
     
 }
-.login-button {
+.x-login-button {
 
     color: var(--dark);
+    background-color: var(--white);
     border: var(--dark) 2px solid;
     border-radius: 999px;
     width: 100%;
@@ -215,11 +216,11 @@
 
 }
 
-.register-button:hover {
+.a-register-button:hover {
     background-color: var(--dark-lite);
     text-decoration: underline;
 }
-.login-button:hover {
+.x-login-button:hover {
     background-color: var(--white-hover);
     text-decoration: underline;
     

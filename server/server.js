@@ -108,26 +108,30 @@ app.get('/store/:category', (req, res) => {
         }
     });
 });
-
 // Fetch Products (with optional category filter)
 app.get('/products', (req, res) => {
-    const category = req.query.category; // Get category from query parameters
+    const category = req.query.category?.toLowerCase(); 
+    const validCategories = ['electronics', 'food', 'clothing', 'kids']; 
+
     let sql = 'SELECT * FROM products';
     const values = [];
 
-    if (category) {
+    if (category && validCategories.includes(category)) {
         sql += ' WHERE LOWER(category) = ?';
-        values.push(category.toLowerCase());
+        values.push(category);
     }
 
     db.query(sql, values, (err, results) => {
         if (err) {
+            console.error('Error fetching products:', err);
             res.status(500).send('Error fetching products');
         } else {
             res.json(results);
         }
     });
 });
+
+
 // Fetch Product by ID
 app.get('/admin/products/:id', (req, res) => {
     const { id } = req.params;
