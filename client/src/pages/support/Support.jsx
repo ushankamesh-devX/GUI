@@ -1,16 +1,16 @@
 import React from 'react';
 import { Ri24HoursFill } from "react-icons/ri";
-import './support.css'; // Import the new CSS file
+import './support.css';
 
 const Support = () => {
   return (
     <div className="support-section">
-      {/* Header */}
+
       <div className="support-header">
         <h1 className="support-title">Support</h1>
       </div>
 
-      {/* Support Form */}
+      
       <main className="support-main">
         <h2 className="support-subtitle">How can we help you?</h2>
         <form className="support-form">

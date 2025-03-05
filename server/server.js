@@ -11,21 +11,21 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-// MySQL Connection Without Database to Create Database First
+
 const db = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || ''
 });
 
-// Connect and Create Database if Not Exists
+
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL:', err);
     } else {
         console.log('MySQL Connected...');
 
-        // Create the database if it doesn't exist
+        
         db.query(`CREATE DATABASE IF NOT EXISTS db_buynest`, (err) => {
             if (err) {
                 console.error('Error creating database:', err);
@@ -34,14 +34,14 @@ db.connect((err) => {
             }
         });
 
-        // Connect to the newly created database
+        
         db.changeUser({ database: 'db_buynest' }, (err) => {
             if (err) {
                 console.error('Error switching to db_buynest:', err);
             } else {
                 console.log('Using database db_buynest.');
 
-                // Create products table if it doesn't exist with 'category' column
+                
                 const createTableQuery = `
                 CREATE TABLE IF NOT EXISTS products (
                     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -189,7 +189,7 @@ app.delete('/admin/products/:id', (req, res) => {
 });
 
 
-// Start the Server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

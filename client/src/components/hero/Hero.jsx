@@ -65,12 +65,12 @@ function Hero() {
             </div>
           </div>
           <div className="auth-buttons">
-            <Link>
+            <Link to={"/register"}>
               <button className="register-button">
                 Register
               </button>
             </Link>
-            <Link>
+            <Link to={"/login"}>
               <button className="login-button">
                 Login
               </button>

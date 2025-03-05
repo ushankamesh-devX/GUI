@@ -4,16 +4,16 @@ import axios from "axios";
 import ItemCard from "../../components/itemCard/ItemCard";
 
 const Store = () => {
-  const { storeCategory } = useParams(); // Get category from URL
+  const { storeCategory } = useParams(); 
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Fetch products by category from the backend
+   
     axios.get(`http://localhost:5000/store/${storeCategory}`)
       .then((response) => {
-        setProducts(response.data); // Set fetched products
-        setError(""); // Clear any previous errors
+        setProducts(response.data); 
+        setError(""); 
       })
       .catch((error) => {
         console.error("Error fetching products:", error);

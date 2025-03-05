@@ -25,6 +25,7 @@ const AddItem = () => {
       .post('http://localhost:5000/admin/products', item)
       .then(() => navigate('/admin'))
       .catch((error) => console.error('Error adding product:', error));
+      console.log("Submit suc");
   };
 
   return (

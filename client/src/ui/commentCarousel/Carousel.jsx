@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./carousel.css"; // Import the new CSS file
+import "./carousel.css"; 
 
 const Carousel = ({
   slides,

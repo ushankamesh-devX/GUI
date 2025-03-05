@@ -6,11 +6,11 @@ import ItemCard from "../itemCard/ItemCard";
 function BestChoice() {
   const [products, setProducts] = useState([]);
 
-  // Fetch best choice products from the backend on component mount
+  
   useEffect(() => {
-    axios.get("http://localhost:5000/")  // Corrected endpoint
+    axios.get("http://localhost:5000/") 
       .then((response) => {
-        setProducts(response.data);  // Set products state with fetched data
+        setProducts(response.data);  
         console.log("Data fetched successfully");
       })
       .catch((error) => {

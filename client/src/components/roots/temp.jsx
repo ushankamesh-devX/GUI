@@ -52,13 +52,15 @@ function Navbar() {
     <div className="z-40 w-full top-0 sticky">
       <nav >
         <section className=" contact flex flex-row justify-center items-center space-x-6 py-1 bg-myYellow">
-          <h2 className="text-myWhite" title="Contact within 8:00 am - 5:00 pm">Contact: <span className=" hover:underline">0764511038</span></h2>
+          <h2 className="text-myWhite" title="Contact 
+          within 8:00 am - 5:00 pm">Contact: <span className=" hover:underline">0764511038</span></h2>
           <div className="flex flex-row text-myWhite text-xl space-x-2">
             <Link title="Follow us on Facebook"><RiFacebookBoxFill/></Link>
             <Link title="Contact via Whastapp"><RiWhatsappFill/></Link>
             <Link title="Send us an Email"><RiMailFill/></Link>
           </div>
         </section>
+        <Re
         <section className="navbar-upper flex flex-row justify-between items-center px-8 py-4 bg-myBlack">
           <Link to="/" title="BuyNest" className="text-myWhite text-3xl " ><span className="font-semibold text-myYellow">Buy</span>Nest</Link>
 
@@ -72,7 +74,7 @@ function Navbar() {
               type="submit"
               className="flex flex-row items-center text-myWhite bg-myBlack hover:bg-myBlackLite m-0.5 rounded-full py-1 px-4"
             >
-              <p className="pr-4 font-normal">Search</p>
+              <p className="pr-4 font-normal ">Search</p>
               <RiSearch2Line className="text-xl" />
             </button>
           </div>
